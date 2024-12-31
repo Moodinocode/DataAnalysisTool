@@ -1,0 +1,1 @@
+//any script used in the html should be written here
