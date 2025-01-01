@@ -6,8 +6,8 @@ app = Flask(__name__,template_folder='client', static_folder='client')
 @app.route('/')
 def index():
   return render_template('index.html')
+  
 
-#hello world
 
 @app.route('/dashboard')
 def second():
