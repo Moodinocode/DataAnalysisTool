@@ -1,0 +1,21 @@
+{
+  "name": "dataanalayticstool",
+  "version": "1.0.0",
+  "description": "This read me file will be used to log the steps of our project, the purpose of the project as well as major changes made througout.\r ______________________________________________________",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js",
+    "run": "node start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mssql": "^11.0.1",
+    "nodemon": "^3.1.9"
+  }
+}
