@@ -12,3 +12,17 @@ explination of the folders:
     package.json --> contains the dependencies for the project
     README.md --> this file where we document our project
     
+
+
+Add the following to the database:
+CREATE TABLE Users (
+    userId INT IDENTITY(1,1) PRIMARY KEY,
+    username NVARCHAR(50) NOT NULL UNIQUE,
+    email NVARCHAR(100) NOT NULL UNIQUE,
+    password NVARCHAR(255) NOT NULL,
+    firstName NVARCHAR(50),
+    lastName NVARCHAR(50),
+    isActive BIT DEFAULT 1,
+    createdAt DATETIME DEFAULT GETDATE(),
+    updatedAt DATETIME DEFAULT GETDATE()
+);
