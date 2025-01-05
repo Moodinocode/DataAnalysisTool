@@ -1,5 +1,6 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database'); // Adjust path as needed
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/database.js';
+import bcrypt from 'bcrypt';
 
 const User = sequelize.define('User', {
     userId: {
@@ -38,14 +39,6 @@ const User = sequelize.define('User', {
     isActive: {
         type: DataTypes.BOOLEAN,
         defaultValue: true
-    },
-    createdAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW
-    },
-    updatedAt: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW
     }
 }, {
     tableName: 'Users',
@@ -62,16 +55,16 @@ const registerUser = async (username, email, password) => {
     });
 };
 
-// Function to check if user exists
 const userExists = async (email) => {
     const user = await User.findOne({ where: { email } });
     return !!user;
 };
 
-// Function to get user by email
 const getUserByEmail = async (email) => {
     return await User.findOne({ where: { email } });
 };
+
+export { User, registerUser, userExists, getUserByEmail };
 
 module.exports = {
     User,
